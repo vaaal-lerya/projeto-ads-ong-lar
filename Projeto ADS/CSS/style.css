@@ -1,0 +1,1659 @@
+/* =========================================================
+   DESIGN SYSTEM - LAR
+   ========================================================= */
+
+:root {
+
+    /* CORES */
+
+    --cor-principal: #1A1E24;
+    --cor-secundaria: #98C2F2;
+    --cor-fundo: #FFF6ED;
+
+    --cor-branco: #FFFFFF;
+    --cor-neutra-clara: #F2F2F2;
+    --cor-neutra-media: #CCCCCC;
+    --cor-neutra-escura: #555555;
+    --cor-destaque: #5B8DB8;
+    --cor-foco: #1A1E24;
+
+
+    /* TIPOGRAFIA */
+
+    --fonte-xxl: 40px;
+    --fonte-xl: 36px;
+    --fonte-lg: 30px;
+    --fonte-md: 24px;
+    --fonte-base: 18px;
+    --fonte-sm: 16px;
+    --fonte-xs: 14px;
+
+
+    /* ESPAÇAMENTOS MODULARES */
+
+    --espaco-1: 8px;
+    --espaco-2: 16px;
+    --espaco-3: 24px;
+    --espaco-4: 32px;
+    --espaco-5: 40px;
+    --espaco-6: 48px;
+    --espaco-7: 64px;
+    --espaco-8: 80px;
+}
+
+
+/* =========================================================
+   CONFIGURAÇÃO GERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-principal);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: var(--fonte-base);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    background-color: var(--cor-fundo);
+}
+
+header img {
+    display: block;
+    width: 100px;
+    height: auto;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+/* MENU PRINCIPAL */
+
+nav {
+    display: flex;
+}
+
+nav > a,
+.menu-dropdown > a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* AGRUPAMENTO AZUL DO MENU */
+
+nav {
+    background-color: var(--cor-secundaria);
+}
+
+
+/* ITEM PROJETOS */
+
+.menu-dropdown {
+    position: relative;
+}
+
+
+/* SUBMENU */
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+
+    display: none;
+
+    min-width: 180px;
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-neutra-media);
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* LINKS DO SUBMENU */
+
+.submenu a {
+    display: block;
+    padding: 10px 15px;
+
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 600;
+
+    background-color: var(--cor-branco);
+}
+
+
+/* MOSTRA O SUBMENU SOMENTE QUANDO INTERAGIR COM PROJETOS */
+
+.menu-dropdown:hover .submenu,
+.menu-dropdown:focus-within .submenu {
+    display: block;
+}
+
+
+/* EFEITO DOS LINKS */
+
+nav a:hover {
+    color: var(--cor-principal);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+nav a:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   PÁGINA INICIAL
+   ========================================================= */
+
+.inicio {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--espaco-8) 20px var(--espaco-6);
+    text-align: center;
+}
+
+.inicio h1 {
+    margin: 0 0 25px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-xxl);
+    line-height: 1.2;
+}
+
+.inicio p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARROSSEL
+   ========================================================= */
+
+.inicio-carrossel {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding: 45px 20px 50px;
+    border-top: 2px solid var(--cor-secundaria);
+}
+
+.inicio-carrossel h2 {
+    margin: 0 0 30px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-lg);
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* GRID DE 12 COLUNAS DO CARROSSEL */
+
+.carrossel {
+    display: grid;
+    grid-template-columns: 45px repeat(10, 1fr) 45px;
+    align-items: center;
+    gap: 20px;
+}
+
+.carrossel-imagens {
+    grid-column: 2 / span 10;
+    min-width: 0;
+    min-height: 430px;
+}
+
+.carrossel-botao:first-child {
+    grid-column: 1;
+}
+
+.carrossel-botao:last-child {
+    grid-column: 12;
+}
+
+
+/* =========================================================
+   SLIDES
+   ========================================================= */
+
+.slide {
+    display: none;
+    margin: 0;
+}
+
+.slide.ativo {
+    display: block;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.slide figcaption {
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOTÕES DO CARROSSEL
+   ========================================================= */
+
+.carrossel-botao {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border: none;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    font-family: sans-serif;
+    font-size: var(--fonte-md);
+    cursor: pointer;
+}
+
+.carrossel-botao:hover {
+    text-decoration: underline;
+}
+
+.carrossel-botao:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   INDICADORES DO CARROSSEL
+   ========================================================= */
+
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.indicador {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border: 2px solid var(--cor-principal);
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.indicador.ativo {
+    background-color: var(--cor-principal);
+}
+
+.indicador:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.indicador:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   SEÇÃO DE CONTATO DA PÁGINA INICIAL
+   ========================================================= */
+
+.contato-inicio {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 2px solid var(--cor-secundaria);
+}
+
+.contato-inicio h2 {
+    margin: 0 0 15px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-lg);
+}
+
+.contato-inicio p {
+    margin: 0 0 15px;
+    line-height: 1.7;
+}
+
+.contato-inicio a {
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+.contato-inicio a:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   QUEM SOMOS
+   ========================================================= */
+
+.sobre {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 2px solid var(--cor-secundaria);
+}
+
+.sobre h1 {
+    margin: 0 0 25px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-xl);
+    line-height: 1.2;
+}
+
+.sobre p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ACOLHIMENTO E CUIDADO
+   ========================================================= */
+
+.acolhimento {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 2px solid var(--cor-secundaria);
+}
+
+.acolhimento h2 {
+    margin: 0 0 15px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-lg);
+}
+
+.acolhimento p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+}
+
+.acolhimento img {
+    display: block;
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+    margin: 30px auto;
+}
+
+
+/* =========================================================
+   DESENVOLVIMENTO E FUTURO
+   ========================================================= */
+
+.desenvolvimento {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 2px solid var(--cor-secundaria);
+}
+
+.desenvolvimento h2 {
+    margin: 0 0 15px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-lg);
+}
+
+.desenvolvimento p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROJETOS
+   ========================================================= */
+
+.projetos-introducao {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+    text-align: center;
+}
+
+.projetos-introducao h1 {
+    margin: 0 0 20px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-xl);
+    line-height: 1.2;
+}
+
+.projetos-introducao p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BLOCOS DOS PROJETOS
+   ========================================================= */
+
+/*
+   Estrutura de 12 colunas:
+   - imagem: 6 colunas
+   - conteúdo: 6 colunas
+*/
+
+.projeto-item {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: start;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding: 40px 20px;
+    border-top: 2px solid var(--cor-secundaria);
+}
+
+.projeto-imagem {
+    grid-column: 1 / span 6;
+}
+
+.projeto-conteudo {
+    grid-column: 7 / span 6;
+}
+
+
+/* Inverte a posição dos projetos alternados */
+
+.projeto-item.projeto-reverso .projeto-imagem {
+    grid-column: 7 / span 6;
+}
+
+.projeto-item.projeto-reverso .projeto-conteudo {
+    grid-column: 1 / span 6;
+}
+
+.projeto-imagem img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.projeto-conteudo h2 {
+    margin: 0 0 15px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-lg);
+}
+
+.projeto-conteudo p {
+    margin: 0 0 15px;
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FAÇA PARTE
+   ========================================================= */
+
+.projetos-participacao {
+    max-width: 1000px;
+    margin: 60px auto 0;
+    padding: 50px 20px;
+    border-top: 2px solid var(--cor-secundaria);
+    text-align: center;
+}
+
+.projetos-participacao > h2 {
+    margin: 0 0 15px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-lg);
+}
+
+.projetos-participacao > p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+.participacao-item {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 25px;
+    border-top: 1px solid var(--cor-neutra-media);
+    text-align: left;
+}
+
+.participacao-item h3 {
+    margin: 0 0 10px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-md);
+}
+
+.participacao-item p {
+    margin: 0 0 15px;
+    line-height: 1.7;
+}
+
+.participacao-item p:last-child {
+    margin-bottom: 0;
+}
+
+.participacao-final {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid var(--cor-neutra-media);
+    text-align: center;
+}
+
+.participacao-final h3 {
+    margin: 0 0 10px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-md);
+}
+
+.participacao-final p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.participacao-final a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.participacao-final a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.participacao-final a:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+.contato-introducao {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px 30px;
+    text-align: center;
+}
+
+.contato-introducao h1 {
+    margin: 0 0 20px;
+    font-family: "Baloo 2", sans-serif;
+    font-size: var(--fonte-xl);
+    line-height: 1.2;
+}
+
+.contato-introducao p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.contato-formulario {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+
+/*
+   O formulário utiliza 12 colunas.
+   Os fieldsets ocupam toda a largura para
+   preservar a identidade visual original.
+*/
+
+.contato-formulario form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    gap: 0;
+}
+
+.contato-formulario fieldset {
+    grid-column: 1 / span 12;
+    width: 100%;
+    border: 1px solid var(--cor-neutra-media);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 0 0 25px;
+}
+
+.contato-formulario legend {
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+.contato-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.contato-formulario input,
+.contato-formulario textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cor-neutra-media);
+    border-radius: 6px;
+    background-color: var(--cor-branco);
+    color: var(--cor-principal);
+    font-family: inherit;
+    font-size: var(--fonte-sm);
+}
+
+.contato-formulario textarea {
+    resize: vertical;
+}
+
+.contato-formulario input:focus,
+.contato-formulario textarea:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 2px;
+    border-color: var(--cor-destaque);
+}
+
+.contato-formulario input:valid,
+.contato-formulario textarea:valid {
+    border-color: var(--cor-destaque);
+}
+
+.contato-formulario input:invalid,
+.contato-formulario textarea:invalid {
+    border-color: #B00020;
+}
+
+.contato-formulario button {
+    grid-column: 1 / span 12;
+    justify-self: center;
+    display: block;
+    margin: 10px auto 0;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--fonte-sm);
+    font-weight: 700;
+	transition: 0.2s;
+}
+
+.contato-formulario button:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.contato-formulario button:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+
+.contato-formulario button:active {
+    background-color: var(--cor-destaque);
+}
+
+.contato-formulario button:disabled {
+    background-color: var(--cor-neutra-media);
+    color: var(--cor-neutra-escura);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* =========================================================
+   COMPONENTES DE FEEDBACK
+   ========================================================= */
+
+/* BADGES */
+
+.badge {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+
+    font-size: var(--fonte-xs);
+    font-weight: 700;
+}
+
+
+/* ALERTAS */
+
+.alerta {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 15px 20px;
+
+    border-left: 5px solid var(--cor-destaque);
+
+    background-color: var(--cor-neutra-clara);
+    color: var(--cor-principal);
+
+    font-size: var(--fonte-sm);
+}
+
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    max-width: 320px;
+    padding: 15px 20px;
+
+    border: 1px solid var(--cor-destaque);
+    border-radius: 6px;
+
+    background-color: var(--cor-branco);
+    color: var(--cor-principal);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    font-size: var(--fonte-sm);
+}
+
+
+/* INTERAÇÃO DO TOAST */
+
+.toast:hover {
+    border-color: var(--cor-principal);
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 2px solid var(--cor-secundaria);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: var(--fonte-xs);
+}
+
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+.menu-hamburguer {
+    display: none;
+}
+
+/* =========================================================
+   1º BREAKPOINT
+   DESKTOP PANORÂMICO - 1440px OU MAIS
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .inicio,
+    .sobre,
+    .desenvolvimento,
+    .projetos-introducao,
+    .contato-introducao {
+        max-width: 1100px;
+    }
+
+    .inicio-carrossel {
+        max-width: 1200px;
+    }
+
+    .projeto-item {
+        max-width: 1200px;
+        gap: 50px;
+    }
+
+    .projetos-participacao {
+        max-width: 1200px;
+    }
+}
+
+
+/* =========================================================
+   2º BREAKPOINT
+   DESKTOP - 1200px ATÉ 1439px
+   ========================================================= */
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+
+    header {
+        padding: 10px 30px;
+    }
+
+    .projeto-item {
+        gap: 35px;
+    }
+}
+
+
+/* =========================================================
+   3º BREAKPOINT
+   NOTEBOOK / TABLET GRANDE - 992px ATÉ 1199px
+   ========================================================= */
+
+@media (max-width: 1199px) and (min-width: 992px) {
+
+    header {
+        padding: 10px 25px;
+    }
+
+    header img {
+        width: 90px;
+    }
+
+    nav a {
+        padding: 10px 12px;
+    }
+
+    .projeto-item {
+        gap: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .projeto-imagem {
+    grid-column: 1 / span 6;
+}
+
+.projeto-conteudo {
+    grid-column: 7 / span 6;
+}
+
+.projeto-item.projeto-reverso .projeto-imagem {
+    grid-column: 7 / span 6;
+}
+
+.projeto-item.projeto-reverso .projeto-conteudo {
+    grid-column: 1 / span 6;
+}
+
+    .carrossel {
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   4º BREAKPOINT
+   TABLET - 769px ATÉ 991px
+   ========================================================= */
+
+@media (max-width: 991px) and (min-width: 769px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header img {
+        width: 85px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+        font-size: 16px;
+    }
+
+    .projeto-item {
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .projeto-imagem {
+    grid-column: 1 / span 5;
+}
+
+.projeto-conteudo {
+    grid-column: 6 / span 7;
+}
+
+.projeto-item.projeto-reverso .projeto-imagem {
+    grid-column: 8 / span 5;
+}
+
+.projeto-item.projeto-reverso .projeto-conteudo {
+    grid-column: 1 / span 7;
+}
+
+    .projeto-conteudo h2 {
+        font-size: 27px;
+    }
+
+    .projeto-conteudo p {
+        font-size: 17px;
+    }
+
+    .carrossel {
+        grid-template-columns: 40px repeat(10, 1fr) 40px;
+        gap: 10px;
+    }
+
+    .carrossel-botao {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contato-formulario {
+        max-width: 800px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+.menu-hamburguer {
+    display: none;
+}
+
+
+/* =========================================================
+   1º BREAKPOINT
+   DESKTOP PANORÂMICO - 1440px OU MAIS
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .inicio,
+    .sobre,
+    .desenvolvimento,
+    .projetos-introducao,
+    .contato-introducao {
+        max-width: 1100px;
+    }
+
+    .inicio-carrossel {
+        max-width: 1200px;
+    }
+
+    .projeto-item {
+        max-width: 1200px;
+        gap: 50px;
+    }
+
+    .projetos-participacao {
+        max-width: 1200px;
+    }
+
+}
+
+
+/* =========================================================
+   2º BREAKPOINT
+   DESKTOP - 1200px ATÉ 1439px
+   ========================================================= */
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+
+    header {
+        padding: 10px 30px;
+    }
+
+    .projeto-item {
+        gap: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   3º BREAKPOINT
+   NOTEBOOK / TABLET GRANDE - 992px ATÉ 1199px
+   ========================================================= */
+
+@media (max-width: 1199px) and (min-width: 992px) {
+
+    header {
+        padding: 10px 25px;
+    }
+
+    header img {
+        width: 90px;
+    }
+
+    nav a {
+        padding: 10px 12px;
+    }
+
+    .projeto-item {
+        gap: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .projeto-imagem {
+        grid-column: 1 / span 6;
+    }
+
+    .projeto-conteudo {
+        grid-column: 7 / span 6;
+    }
+
+    .projeto-item.projeto-reverso .projeto-imagem {
+        grid-column: 7 / span 6;
+    }
+
+    .projeto-item.projeto-reverso .projeto-conteudo {
+        grid-column: 1 / span 6;
+    }
+
+    .carrossel {
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   4º BREAKPOINT
+   TABLET - 769px ATÉ 991px
+   ========================================================= */
+
+@media (max-width: 991px) and (min-width: 769px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header img {
+        width: 85px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+        font-size: 16px;
+    }
+
+    .projeto-item {
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .projeto-imagem {
+        grid-column: 1 / span 5;
+    }
+
+    .projeto-conteudo {
+        grid-column: 6 / span 7;
+    }
+
+    .projeto-item.projeto-reverso .projeto-imagem {
+        grid-column: 8 / span 5;
+    }
+
+    .projeto-item.projeto-reverso .projeto-conteudo {
+        grid-column: 1 / span 7;
+    }
+
+    .projeto-conteudo h2 {
+        font-size: 27px;
+    }
+
+    .projeto-conteudo p {
+        font-size: 17px;
+    }
+
+    .carrossel {
+        grid-template-columns: 40px repeat(10, 1fr) 40px;
+        gap: 10px;
+    }
+
+    .carrossel-botao {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contato-formulario {
+        max-width: 800px;
+    }
+
+}
+
+
+/* =========================================================
+   5º BREAKPOINT
+   CELULAR - ATÉ 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* CABEÇALHO */
+
+    header {
+        position: relative;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    header > a {
+        margin: 0 auto;
+    }
+
+    header img {
+        width: 90px;
+        margin-bottom: 0;
+    }
+
+
+    /* BOTÃO HAMBÚRGUER */
+
+    .menu-hamburguer {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 42px;
+        height: 42px;
+
+        padding: 6px;
+
+        border: 1px solid var(--cor-neutra-media);
+        border-radius: 6px;
+
+        background-color: var(--cor-branco);
+
+        cursor: pointer;
+    }
+
+    .menu-hamburguer span {
+        display: block;
+
+        width: 100%;
+        height: 3px;
+
+        margin: 3px 0;
+
+        background-color: var(--cor-principal);
+        border-radius: 2px;
+    }
+
+
+    /* MENU MOBILE */
+
+    nav {
+        display: none;
+
+        width: 100%;
+        margin-top: 15px;
+
+        background-color: var(--cor-secundaria);
+    }
+
+    nav.menu-aberto {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav > a,
+    nav > .menu-dropdown {
+        width: 100%;
+    }
+
+    nav > a,
+    nav > .menu-dropdown > a {
+        padding: 10px 12px;
+    }
+
+
+    /* SUBMENU MOBILE */
+
+    .submenu {
+        position: static;
+
+        display: none;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+        box-shadow: none;
+
+        background-color: var(--cor-neutra-clara);
+    }
+
+    .submenu a {
+        display: block;
+
+        padding: 10px 12px 10px 28px;
+
+        color: var(--cor-principal);
+        text-decoration: none;
+        font-weight: 600;
+
+        background-color: var(--cor-neutra-clara);
+    }
+
+
+    /* NO CELULAR, O HOVER NÃO ABRE O SUBMENU */
+
+    .menu-dropdown:hover .submenu,
+    .menu-dropdown:focus-within .submenu {
+        display: none;
+    }
+
+
+    /* JAVASCRIPT CONTROLA A ABERTURA */
+
+    .menu-dropdown.menu-aberto .submenu {
+        display: block;
+    }
+
+
+    /* PÁGINA INICIAL */
+
+    .inicio {
+        padding: 60px 20px 40px;
+    }
+
+    .inicio h1 {
+        font-size: 30px;
+    }
+
+    .inicio p {
+        font-size: 17px;
+    }
+
+
+    /* CARROSSEL */
+
+    .inicio-carrossel {
+        padding: 35px 15px 40px;
+    }
+
+    .inicio-carrossel h2 {
+        font-size: 27px;
+    }
+
+    .carrossel {
+        grid-template-columns: 40px repeat(10, 1fr) 40px;
+        gap: 10px;
+    }
+
+    .carrossel-imagens {
+        min-height: 330px;
+    }
+
+    .slide img {
+        height: 300px;
+    }
+
+    .slide figcaption {
+        font-size: 16px;
+    }
+
+    .carrossel-botao {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+
+    /* QUEM SOMOS */
+
+    .sobre {
+        padding: 40px 20px;
+    }
+
+    .sobre h1 {
+        font-size: 30px;
+    }
+
+    .sobre p {
+        font-size: 17px;
+    }
+
+    .acolhimento {
+        padding: 40px 20px;
+    }
+
+    .acolhimento h2 {
+        font-size: 27px;
+    }
+
+    .acolhimento p {
+        font-size: 17px;
+    }
+
+    .acolhimento img {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .desenvolvimento {
+        padding: 40px 20px;
+    }
+
+    .desenvolvimento h2 {
+        font-size: 27px;
+    }
+
+    .desenvolvimento p {
+        font-size: 17px;
+    }
+
+
+    /* PROJETOS */
+
+    .projetos-introducao {
+        padding: 50px 20px 30px;
+    }
+
+    .projetos-introducao h1 {
+        font-size: 30px;
+    }
+
+    .projetos-introducao p {
+        font-size: 17px;
+    }
+
+    .projeto-item,
+    .projeto-item.projeto-reverso {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 25px;
+        padding: 35px 20px;
+        margin-bottom: 20px;
+    }
+
+    .projeto-imagem,
+    .projeto-item.projeto-reverso .projeto-imagem {
+        grid-column: 1 / span 12;
+    }
+
+    .projeto-conteudo,
+    .projeto-item.projeto-reverso .projeto-conteudo {
+        grid-column: 1 / span 12;
+    }
+
+    .projeto-imagem img {
+        max-width: 100%;
+    }
+
+    .projeto-conteudo h2 {
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .projeto-conteudo p {
+        font-size: 17px;
+    }
+
+
+    /* FAÇA PARTE */
+
+    .projetos-participacao {
+        margin-top: 40px;
+        padding: 40px 20px;
+    }
+
+    .projetos-participacao > h2 {
+        text-align: center;
+    }
+
+    .projetos-participacao > p {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .participacao-item {
+        padding: 25px 20px;
+    }
+
+    .participacao-item h3 {
+        margin-bottom: 10px;
+    }
+
+    .participacao-final {
+        margin-top: 30px;
+    }
+
+    .participacao-final a {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+
+    /* CONTATO */
+
+    .contato-introducao {
+        padding: 50px 20px 30px;
+    }
+
+    .contato-introducao h1 {
+        font-size: 30px;
+    }
+
+    .contato-introducao p {
+        font-size: 17px;
+    }
+
+    .contato-formulario {
+        padding: 20px 20px 40px;
+    }
+
+    .contato-formulario fieldset {
+        padding: 20px;
+    }
+
+    .contato-formulario input,
+    .contato-formulario textarea {
+        font-size: 16px;
+    }
+
+    .contato-formulario button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   6º BREAKPOINT
+   CELULARES PEQUENOS - ATÉ 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 12px 10px;
+    }
+
+    header img {
+        width: 80px;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 14px;
+    }
+
+
+    /* PÁGINA INICIAL */
+
+    .inicio {
+        padding: 45px 15px 30px;
+    }
+
+    .inicio h1 {
+        font-size: 27px;
+    }
+
+    .inicio p {
+        font-size: 16px;
+    }
+
+
+    /* CARROSSEL */
+
+    .inicio-carrossel {
+        padding: 30px 10px 35px;
+    }
+
+    .inicio-carrossel h2 {
+        font-size: 24px;
+    }
+
+    .carrossel {
+        grid-template-columns: 35px repeat(10, 1fr) 35px;
+        gap: 5px;
+    }
+
+    .carrossel-imagens {
+        min-height: 270px;
+    }
+
+    .slide img {
+        height: 240px;
+    }
+
+    .carrossel-botao {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+
+    /* TÍTULOS */
+
+    .sobre h1,
+    .projetos-introducao h1,
+    .contato-introducao h1 {
+        font-size: 27px;
+    }
+
+    .acolhimento h2,
+    .desenvolvimento h2,
+    .projeto-conteudo h2 {
+        font-size: 24px;
+    }
+
+
+    /* PROJETOS */
+
+    .projeto-item {
+        padding: 30px 15px;
+    }
+
+
+    /* FORMULÁRIO */
+
+    .contato-formulario {
+        margin: 0 10px;
+        padding: 20px 10px 30px;
+    }
+
+    .contato-formulario fieldset {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   CONTROLE DO MENU HAMBÚRGUER
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    button.menu-hamburguer {
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    button.menu-hamburguer {
+        display: flex !important;
+    }
+
+}

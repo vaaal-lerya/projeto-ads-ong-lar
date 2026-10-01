@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LAR - Lugar de Apoio e Recomeço</title>
+
+    <!-- Fontes -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <a href="index.html">
+
+            <img
+                src="../IMG/logo.png"
+                alt="Logo da ONG LAR">
+
+        </a>
+
+
+        <!-- BOTÃO DO MENU HAMBÚRGUER -->
+
+        <button
+            type="button"
+            class="menu-hamburguer"
+            aria-label="Abrir menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- MENU DE NAVEGAÇÃO -->
+
+        <nav>
+
+            <a href="index.html">Início</a>
+
+            <a href="quem-somos.html">Quem Somos</a>
+
+            <div class="menu-dropdown">
+
+                <a href="projetos.html">Projetos</a>
+
+                <div class="submenu">
+
+                    <a href="projetos.html">Nossos Projetos</a>
+
+                    <a href="projetos.html#participacao">Faça Parte</a>
+
+                </div>
+
+            </div>
+
+            <a href="contato.html">Contato</a>
+
+        </nav>
+
+    </header>
+
+
+    <main id="conteudo-principal">
+
+        <!-- APRESENTAÇÃO DA LAR -->
+
+        <section class="inicio">
+
+            <h1>
+                LAR - Lugar de Apoio e Recomeço
+            </h1>
+
+            <p>
+                A LAR é uma organização não governamental voltada ao
+                acolhimento, cuidado e desenvolvimento de crianças e
+                adolescentes em situação de vulnerabilidade.
+            </p>
+
+            <p>
+                O propósito da organização é oferecer um ambiente seguro,
+                estruturado e acolhedor para aqueles que precisam de
+                proteção e acompanhamento, respeitando suas histórias,
+                necessidades e individualidades.
+            </p>
+
+            <p>
+                Mais do que oferecer acolhimento, a LAR busca contribuir
+                para que cada criança e adolescente tenha acesso a
+                oportunidades de desenvolvimento, descubra suas
+                habilidades e possa construir novas perspectivas para
+                o futuro.
+            </p>
+
+            <p>
+                Por meio do cuidado, do acompanhamento psicológico,
+                da orientação e de atividades voltadas ao desenvolvimento
+                pessoal e profissional, buscamos transformar o acolhimento
+                em um ponto de partida para novos caminhos.
+            </p>
+
+        </section>
+
+
+        <!-- CARROSSEL -->
+
+        <section
+            class="inicio-carrossel"
+            aria-labelledby="titulo-carrossel">
+
+            <h2 id="titulo-carrossel">
+                Um espaço para acolher e recomeçar
+            </h2>
+
+            <div class="carrossel">
+
+                <!-- BOTÃO IMAGEM ANTERIOR -->
+
+                <button
+                    type="button"
+                    class="carrossel-botao"
+                    id="anterior"
+                    aria-label="Imagem anterior">
+
+                    &#10094;
+
+                </button>
+
+
+                <!-- ÁREA DAS IMAGENS -->
+
+                <div class="carrossel-imagens">
+
+                    <figure class="slide ativo">
+
+                        <img
+                            src="../IMG/carrosel01.jpg"
+                            alt="Menina começando a aprender a andar de bicicleta.">
+
+                        <figcaption>
+                            Descobertas e novas experiências.
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="slide">
+
+                        <img
+                            src="../IMG/carrosel02.jpg"
+                            alt="Aniversário em estilo piquenique, com crianças reunidas ao redor cantando.">
+
+                        <figcaption>
+                            Momentos de convivência e celebração.
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="slide">
+
+                        <img
+                            src="../IMG/carrosel03.jpg"
+                            alt="Crianças realizando uma atividade de pintura com tinta guache, cartolinas e pincéis, com bambolês ao fundo.">
+
+                        <figcaption>
+                            Criatividade, expressão e aprendizado.
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="slide">
+
+                        <img
+                            src="../IMG/carrosel04.jpg"
+                            alt="Mulheres adultas preparando cachorro-quente para as crianças.">
+
+                        <figcaption>
+                            Momentos de cuidado e convivência.
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+
+                <!-- BOTÃO PRÓXIMA IMAGEM -->
+
+                <button
+                    type="button"
+                    class="carrossel-botao"
+                    id="proximo"
+                    aria-label="Próxima imagem">
+
+                    &#10095;
+
+                </button>
+
+            </div>
+
+
+            <!-- INDICADORES -->
+
+            <div
+                class="carrossel-indicadores"
+                role="group"
+                aria-label="Navegação do carrossel">
+
+                <button
+                    type="button"
+                    class="indicador ativo"
+                    aria-label="Mostrar primeira imagem">
+                </button>
+
+                <button
+                    type="button"
+                    class="indicador"
+                    aria-label="Mostrar segunda imagem">
+                </button>
+
+                <button
+                    type="button"
+                    class="indicador"
+                    aria-label="Mostrar terceira imagem">
+                </button>
+
+                <button
+                    type="button"
+                    class="indicador"
+                    aria-label="Mostrar quarta imagem">
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section>
+
+            <div class="participacao-final">
+
+                <h3>
+                    Quer fazer parte?
+                </h3>
+
+                <p>
+                    Entre em contato com a LAR para conhecer as
+                    possibilidades de participação e descobrir como
+                    você pode contribuir.
+                </p>
+
+                <a href="contato.html">
+                    Entre em contato
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            LAR - Lugar de Apoio e Recomeço
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../JS/main.js"></script>
+
+</body>
+
+</html>
